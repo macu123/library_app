@@ -2,6 +2,30 @@ class Copy < ApplicationRecord
   belongs_to :book
   has_many :loans
 
+  def book_title
+    book.title
+  end
+
+  def book_author
+    book.author
+  end
+
+  def book_genre
+    book.genre
+  end
+
+  def book_sub_genre
+    book.sub_genre
+  end
+
+  def book_num_of_pages
+    book.num_of_pages
+  end
+
+  def book_publisher
+    book.publisher
+  end
+
   def available?
     self.available
   end
