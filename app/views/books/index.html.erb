@@ -3,7 +3,12 @@
   <%= link_to 'Create new book', new_book_path %>
 <% end %>
 <% @books.each do |book| %>
-  <p>Title: <%= book.title %></p>
+  <p>
+    Title: <%= book.title %> |
+    <% if logged_in? && book.available? %>
+      <%= link_to 'Borrow', checkout_book_path(book), method: :post %>
+    <% end %>
+  </p>
   <p>Author: <%= book.author %></p>
   <p>Genre: <%= book.genre %></p>
   <p>Sub genre: <%= book.sub_genre %></p>

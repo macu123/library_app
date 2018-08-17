@@ -2,6 +2,6 @@
 <%= link_to 'Back', books_path %>
 <% @book.copies.each do |copy| %>
   <p>Status: <%= copy.available? ? 'Currently in the library' : 'Currently checkout' %></p>
-  <p>Borrower: <%= copy.borrower %></p>
+  <p>Borrower: <%= copy.borrower.email %></p>
   <hr>
 <% end %>

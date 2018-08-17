@@ -1,13 +1,22 @@
 class Book < ApplicationRecord
   has_many :copies
 
+  def available_copies
+    copies.where(available: true)
+  end
+
   def available?
-    copies.where(available: true).count > 0
+    available_copies.count > 0
   end
 
   def add_copies(num_of_copies)
     num_of_copies.times do 
       copies.create
     end
+  end
+
+  def checkout_by(user)
+    copy = available_copies.first
+    copy.checkout_by(user)
   end
 end

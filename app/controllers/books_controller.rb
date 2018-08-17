@@ -34,6 +34,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def checkout
+    book = Book.find(params[:id])
+    book.checkout_by(@current_user)
+  end
+
   private
   def book_params
     params.require(:book).permit(
