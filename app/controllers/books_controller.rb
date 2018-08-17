@@ -40,6 +40,12 @@ class BooksController < ApplicationController
     redirect_to books_url, notice: 'It has been borrowed successfully!'
   end
 
+  def add_copy
+    book = Book.find(params[:id])
+    book.add_copy
+    redirect_to book, notice: 'One copy has been added successfully!'
+  end
+
   private
   def book_params
     params.require(:book).permit(

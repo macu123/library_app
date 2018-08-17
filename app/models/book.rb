@@ -9,10 +9,8 @@ class Book < ApplicationRecord
     available_copies.count > 0
   end
 
-  def add_copies(num_of_copies)
-    num_of_copies.times do 
-      copies.create
-    end
+  def add_copy
+    copies.create
   end
 
   def checkout_by(user)
