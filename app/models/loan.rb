@@ -25,4 +25,8 @@ class Loan < ApplicationRecord
   def book_publisher
     copy.book.publisher
   end
+
+  def checkin
+    copy.checkin
+  end
 end

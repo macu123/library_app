@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :loans
+  resources :loans do
+    member do
+      post '/checkin', to: 'loans#checkin'
+    end
+  end
   resources :copies
   resources :books do
     member do

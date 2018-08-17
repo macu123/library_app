@@ -4,9 +4,9 @@
 <% end %>
 <% @books.each do |book| %>
   <p>
-    Title: <%= book.title %> |
+    Title: <%= book.title %> 
     <% if logged_in? && book.available? %>
-      <%= link_to 'Borrow', checkout_book_path(book), method: :post %>
+      | <%= link_to 'Borrow', checkout_book_path(book), method: :post %>
     <% end %>
   </p>
   <p>Author: <%= book.author %></p>
