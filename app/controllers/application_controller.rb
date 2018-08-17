@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def admin?
-    @current_user.admin?
+  def current_user
+    @current_user
   end
 
-  helper_method :logged_in?, :admin?
+  helper_method :logged_in?, :current_user
 
   private
   def require_login

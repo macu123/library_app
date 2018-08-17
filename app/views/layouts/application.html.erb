@@ -11,10 +11,10 @@
 
   <body>
     <div id="user_header">
-      <% if logged_in? && admin? %>
-        <%= link_to 'All books', books_path %> | <%= link_to 'All copies', copies_path %> | <%= link_to 'My books', loans_path %> | <%= link_to 'Logout', logout_path %>
+      <% if logged_in? && current_user.admin? %>
+        <%= current_user.email %> | <%= link_to 'All books', books_path %> | <%= link_to 'All copies', copies_path %> | <%= link_to 'My books', loans_path %> | <%= link_to 'Logout', logout_path %>
       <% elsif logged_in? %>
-        <%= link_to 'All books', books_path %> | <%= link_to 'My books', loans_path %> | <%= link_to 'Logout', logout_path %>
+        <%= current_user.email %> | <%= link_to 'All books', books_path %> | <%= link_to 'My books', loans_path %> | <%= link_to 'Logout', logout_path %>
       <% else %>
         <%= link_to 'All books', books_path %> | <%= link_to "Sign Up", signup_path %> | <%= link_to "Log In", login_path %>
       <% end %>
