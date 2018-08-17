@@ -6,15 +6,15 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
 
-  resources :users
-  resources :sessions
-  resources :loans do
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :loans, only: [:index] do
     member do
       post '/checkin', to: 'loans#checkin'
     end
   end
-  resources :copies
-  resources :books do
+  resources :copies, only: [:index, :show]
+  resources :books, except: [:destroy] do
     member do
       post '/checkout', to: 'books#checkout'
       post '/add_copy', to: 'books#add_copy'
