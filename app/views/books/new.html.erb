@@ -1,0 +1,40 @@
+<h1>New book</h1>
+<%= link_to 'Back', books_path %>
+<%= form_for @book do |f| %>
+  <% if @book.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br />
+    <%= f.text_field :genre %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_genre %><br />
+    <%= f.text_field :sub_genre %>
+  </div>
+  <div class="field">
+    <%= f.label :num_of_pages %><br />
+    <%= f.number_field :num_of_pages %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher %><br />
+    <%= f.text_field :publisher %>
+  </div>
+  <div class="actions"><%= f.submit "Create" %></div>
+<% end %>
