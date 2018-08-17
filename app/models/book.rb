@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
   has_many :copies
 
+  validates :title, presence: true
+
   def available_copies
     copies.where(available: true)
   end
