@@ -1,5 +1,5 @@
 <h1>All copies for <%= @book.title %></h1>
-<%= link_to 'Back', books_path %> | <%= link_to 'Add copy', add_copy_book_path(@book), method: :post %>
+<%= link_to 'Add copy', add_copy_book_path(@book), method: :post %>
 <% @book.copies.each do |copy| %>
   <p>Status: <%= copy.available? ? 'Currently in the library' : 'Currently checkout' %></p>
   <p>Borrower: <%= copy.borrower.try(:email) %></p>
