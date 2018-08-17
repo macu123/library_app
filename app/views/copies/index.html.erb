@@ -1,0 +1,9 @@
+<h1>All copies</h1>
+<% @copies.each do |copy| %>
+  <p>Title: <%= copy.book_title %></p>
+  <p>Author: <%= copy.book_author %></p>
+  <p>Genre: <%= copy.book_genre %></p>
+  <p>Status: <%= copy.available? ? 'Currently in the library' : 'Currently checkout' %></p>
+  <%= link_to 'Full history', copy %>
+  <hr>
+<% end %>
