@@ -1,4 +1,5 @@
 class CopiesController < ApplicationController
+  before_action :require_admin
   def index
     @copies = Copy.all
   end

@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   skip_before_action :require_login, only: [:index]
+  before_action :require_admin, except: [:index, :checkout]
   def index
     @books = Book.all
   end
