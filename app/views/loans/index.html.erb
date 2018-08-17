@@ -1,0 +1,7 @@
+<h1>Your checkout books</h1>
+<% @checkout_loans.each do |loan| %>
+  <p>Title: <%= loan.book_title %></p>
+  <p>Author: <%= loan.book_author %></p>
+  <p>Genre: <%= loan.book_genre %></p>
+  <hr>
+<% end %>
