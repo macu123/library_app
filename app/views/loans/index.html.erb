@@ -1,4 +1,4 @@
-<h1>Your current books</h1>
+<h1>My books</h1>
 <% @current_loans.each do |loan| %>
   <p>Title: <%= loan.book_title %> | <%= link_to 'Return', checkin_loan_path(loan), method: :post %></p>
   <p>Author: <%= loan.book_author %></p>
