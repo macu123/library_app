@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Library App
 
-Things you may want to cover:
+Ruby version: 2.5<br>
+Rails version: 5.2
 
-* Ruby version
+Admin user email: admin@gmail.com<br>
+Admin user password: 12345
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The link to live version: https://cryptic-scrubland-84336.herokuapp.com/
