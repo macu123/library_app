@@ -14,7 +14,7 @@ class User < ApplicationRecord
     self.admin
   end
   
-  def checkout_loans
+  def current_loans
     loans.where('checkout_date IS NOT NULL AND checkin_date IS NULL')
   end
 end

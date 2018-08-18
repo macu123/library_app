@@ -14,13 +14,13 @@ class ApplicationController < ActionController::Base
   private
   def require_login
     unless logged_in?
-      redirect_to login_url, alert: 'You must be logged in to access this section'
+      redirect_to login_url, alert: 'You must be logged in to access this section!'
     end
   end
 
   def require_admin
     unless @current_user.admin?
-      redirect_to root_url, alert: 'You must be admin user to access this section'
+      redirect_to root_url, alert: 'You must be admin user to access this section!'
     end
   end
 end

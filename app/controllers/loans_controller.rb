@@ -1,6 +1,6 @@
 class LoansController < ApplicationController
   def index
-    @checkout_loans = @current_user.checkout_loans
+    @current_loans = @current_user.current_loans
   end
 
   def checkin
