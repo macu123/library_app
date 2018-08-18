@@ -4,7 +4,7 @@
   <p>Author: <%= copy.book_author %></p>
   <p>Genre: <%= copy.book_genre %></p>
   <p>Status: <%= copy.available? ? 'Currently in the library' : 'Currently checkout' %></p>
-  <%= link_to 'Full history', copy %>
+  <%= link_to 'Borrow history', copy %>
   <hr>
 <% end %>
 <%= will_paginate @copies %>
