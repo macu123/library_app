@@ -31,6 +31,8 @@ class Copy < ApplicationRecord
   end
 
   def checkout_by(user)
+    return false unless self.available?
+
     loans.create(
       user_id: user.id,
       checkout_date: Date.today,
@@ -45,11 +47,13 @@ class Copy < ApplicationRecord
       ).first
   end
 
-  def borrower
-    current_loan.user if current_loan
+  def borrower 
+    current_loan.try(:user)
   end
 
   def checkin
+    return false if self.available?
+
     current_loan.update(checkin_date: Date.today)
     self.update(available: true)
   end

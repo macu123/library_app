@@ -16,6 +16,8 @@ class Book < ApplicationRecord
   end
 
   def checkout_by(user)
+    return false unless self.available?
+      
     copy = available_copies.first
     copy.checkout_by(user)
   end

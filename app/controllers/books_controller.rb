@@ -37,8 +37,11 @@ class BooksController < ApplicationController
 
   def checkout
     book = Book.find(params[:id])
-    book.checkout_by(@current_user)
-    redirect_to books_url, notice: 'It has been borrowed successfully!'
+    if book.checkout_by(@current_user)
+      redirect_to books_url, notice: 'It has been borrowed successfully!'
+    else
+      redirect_to books_url, alert: 'It is not available to borrow now!'
+    end
   end
 
   def add_copy

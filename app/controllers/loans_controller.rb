@@ -5,7 +5,10 @@ class LoansController < ApplicationController
 
   def checkin
     loan = Loan.find(params[:id])
-    loan.checkin
-    redirect_to loans_url, notice: 'It has been returned successfully!'
+    if loan.checkin
+      redirect_to loans_url, notice: 'It has been returned successfully!'
+    else
+      redirect_to loans_url, alert: 'It cannot be returned now!'
+    end
   end
 end
