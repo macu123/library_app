@@ -2,6 +2,8 @@ class Loan < ApplicationRecord
   belongs_to :user
   belongs_to :copy
 
+  validates :checkout_date, :due_date, presence: true
+
   def book_title
     copy.book.title
   end
